@@ -1,50 +1,51 @@
 # Keep Talking and Everybody Codes
 
-Een repository om te laten zien hoe jij code schrijft en over code denkt.
-Een startpunt voor een goed gesprek over ons vak!
+A repository to show how you write code and think about it.
+A starting point for a good discussion about our job!
 
 ## Context
 
-Mogelijk ben je hier gekomen omdat je een tweede gesprek hebt met ons.
-In zo'n gesprek willen we het hebben over techniek.
-We willen zien hoe je code schrijft, hoe je er over denkt, wat je belangrijk vindt.
-Kortom: we willen een gesprek over code ergens mee kickstarten.
+You probably came here because you have a second interview with us.
+In a meeting like that we would like to talk more about technology.
+We want to see how you write code, how you think and what you think is important when writing code.
+In short: we want to kickstart our discussion about code.
 
-Er zijn vele manieren om dat te doen.
-Wellicht heb je open source projecten die je graag zou willen laten zien.
-Mogelijk heb je een vorig project waar je code van wilt delen met ons.
-En dat is een prima optie wat ons betreft.
-Maar misschien heb je dat (nog) niet.
-Daarmee komen we op deze repository: een startpunt om wat code te schrijven als basis voor een gesprek over techniek!
+There's multiple ways to do this.
+Perhaps you have open source projects you'd like to show us.
+Maybe you have a previous project of which you can share the code.
+And that's fine with us.
+But perhaps you don't have that (yet).
+That's where this repository comes in: a starting point to write some code as a good basis for a discussion about technology!
 
-"Is dit nu een _test_?" vraag je je misschien af?
-Het antwoord is wat ons betreft heel duidelijk: **nee**!
-_Het heeft wél iets weg van een test_ (en dat is ook de bedoeling!), maar er zijn een aantal belangrijke verschillen:
+"Is this a _test_?" you might be asking?
+The answer is very clear: **no**!
+_It does look a little like a test_ (and that's intentional!), but there's some important differences:
 
-- Het bepaalt niet of je wordt uitgenodigd (okay, tenzij je iets _heel_ geks doet). Dat hadden we namelijk al bedacht voordat we je hier naartoe stuurden. Je krijgt dus sowieso de kans om je keuzes toe te lichten.
-- We willen dat je dit **timeboxed: 2 tot 4 uur**. Het is logisch dat je dan misschien niet aan alles toe komt. Dat geeft niet. Focus op laten zien wat je belangrijk vindt, en vertel ons over je keuzes daarin.
-- Voor een 'test' kun je slagen of falen, of krijg je een eindcijfer. Dit is echter puur _input_ voor een volgend gesprek.
+- It doesn't determine whether you will be invited (okay, unless you do something _really_ weird). We already decided you could come back before we sent you here. So you'll always get the chance to explain your choices.
+- We want you to **timebox this to 2 to 4 hours**. It makes sense if you don't get to finish everything in that time. Focus on showing what you think is important, and explain those choices to us.
+- With a 'test' you can succeed or fail, or you get a grade. This is just _input_ for our next meeting.
 
-## De Opdracht
+## The Exercise
 
-De opdracht bestaat uit drie onderdelen waarin je gebruik maakt van de dataset die je vindt in [data/cameras-defb.csv](data/cameras-defb.csv).
-Je mag de opdracht doen in een taal en tech stack naar keuze (wij zijn zelf voornamelijk bekend met C#, JavaScript, TypeScript, PHP, Python, Java).
+The exercise consists of three parts where you use the dataset you'll find in [data/cameras-defb.csv](data/cameras-defb.csv).
+This is a set of camera data from the Dutch city of [Utrecht](https://en.wikipedia.org/wiki/Utrecht).
+You can do the exercise in a language and stack of your choosing (we are mostly familiar with C#, JavaScript, TypeScript, PHP, Python).
 
 ## CLI
 
-Maak een programma of script dat de gebruiker in staat stelt om via de CLI te zoeken op een deel van een camera _name_, bijvoorbeeld:
+Make a program or script that allows the user to search via the CLI for part of a camera _name_, like:
 
 ```sh
-# PHP via de CLI aanroepen
+# Calling PHP via the CLI
 php search.php --name Neude
 
-# Of als je .NET Core hebt gebruikt
+# Or if you used .NET:
 dotnet Search --name Neude
 
 # Etc.
 ```
 
-Verwachte output:
+Expected output:
 
 ```none
 501 | UTR-CM-501 Neude rijbaan voor Postkantoor | 52.093421 | 5.118278
@@ -58,71 +59,46 @@ etc.
 
 ## API
 
-Serveer de data uit de csv vanuit een REST API, zodat een webapplicatie die data ergens kan ophalen.
+Serve the data from the csv from a REST API, such that a web application can fetch that data.
 
-## Webapplicatie
+## Web application
 
-Voor de front-end staat het je vrij om te kiezen of je wel of niet een framework gebruikt, en zo ja welk framework.
-Bedenk wat je graag wilt laten zien en waar je het graag in het technische gesprek over wilt hebben.
+For the frontend you can choose whether or not to use a framework, and if so, which framework.
+Think about what you want to show and what you want to talk about in the technical meeting.
 
-### Pagina opzetten met data-tabel
+### Page with data table
 
-Het eerste onderdeel van de front-end bestaat uit het ophalen van de data uit de API.
-Toon de data verspreid over vijf kolommen op de homepagina van de applicatie.
-_Optioneel_ kun je [code/index.html](https://github.com/infi-nl/everybody-codes/blob/main/code/index.html) als startpunt gebruiken.
-De spreiding van de data moet gebeuren volgens de onderstaande regels en op basis van het nummer van de camera:
+The first part of the frontend consists of fetching the data from the API.
+Show the data spread across five columns on the homepage of the application.
+_Optionally_ you can use [code/index.html](https://github.com/infi-nl/everybody-codes/blob/main/code/index.html) as a starting point.
+The data should be spread according to the following rules, based on the _number_ of the camera:
 
-1. Kolom met camera's met nummers tot 600
-2. Kolom met camera's met nummers 600 tot 700
-3. Kolom met camera's met nummers 700 tot 800
-4. Alle overige camera's
+1. Column with cameras with numbers up to 600.
+2. Column with cameras with numbers 600 to 700.
+3. Column with cameras with numbers 700 to 800.
+4. All other camera's
 
-### Map met camera's plotten
+### Plot map with cameras
 
-Het tweede onderdeel bestaat uit het tonen van de camera's als markers op een map.
-Toon _alle_ camera's als markers op een kaart van Utrecht, boven de tabel met camera-data.
-De optionele opzet in [code/index.html](https://github.com/infi-nl/everybody-codes/blob/main/code/index.html) geeft een indicatie van hoe dit eruit moet zien.
+The second part is about showing the cameras as markers on a map.
+Show _all_ cameras as markers on a map of Utrecht, above the table with camera data.
+The optional setup in [code/index.html](https://github.com/infi-nl/everybody-codes/blob/main/code/index.html) gives an indication of how this should look.
 
-Je mag een Map-tool naar eigen keuze gebruiken.
-Heb je geen idee of geen voorkeur kun je goed de [quick start van Leaflet gebruiken](https://leafletjs.com/examples/quick-start/).
-Die library suggereert dat je de OpenStreetMaps kaarten gebruikt, wat voor deze opdracht prima werkt, en op moment van schrijven geen ingewikkelde sign-up of credit card vereist.
+You can use a map tool of choice.
+If you don't have a preference you could [use the quick start of Leaflet](https://leafletjs.com/examples/quick-start/).
+The library suggests that you use OpenStreetMaps, which works fine for this exercise, and at the time of writing this doesn't require a complicated signup with a credit card.
 
-Tip: [coördinaten 52.0914 bij 5.1115 zijn gecentreerd op Utrecht](https://www.openstreetmap.org/#map=14/52.0914/5.1115).
+Tip: [coordinates 52.0914 to 5.1115 are centered on Utrecht](https://www.openstreetmap.org/#map=14/52.0914/5.1115).
 
-## Wat? Open Source?!
-
-Jazeker, deze opdracht is open source!
-
-"_Maar zijn jullie niet bang dat mensen dan gaan 'valsspelen'?_"
-Hah, nou, die kans is niet heel veel groter dan wanneer we een losse opdracht zouden _mailen_.
-We zijn graag open en eerlijk naar elkaar, en vertrouwen erop dat je gewoon zelf aan de slag gaat.
-Bovendien, gekke dingen komen in ons gesprek uiteindelijk vanzelf wel bovendrijven...
-
-"_Accepteren jullie dan ook.... pull requests?_"
-Maar natuurlijk!
-Het is alleen zeker niet het hoofddoel, dus focus vooral op de opdracht zelf.
-Maar heb je achteraf nog een voorstel voor hoe dit beter kan, of wil je een taalfoudt oplossen: stuur maar op die PR's!
-Of open even een issue als je twijfelt.
-
-## Over die titel
+## About the title
 
 Huh?
 
 > Keep Talking and Everybody Codes
 
-"_Wat is dat nou weer?_"
-Sorry, woordgrapje gerelateerd aan [een toffe game](http://www.keeptalkinggame.com/).
+"_What's that?_"
+Sorry, it's a pun related to [a fun game](http://www.keeptalkinggame.com/).
 
-## Licentie en Copyright
+## License en Copyright
 
-Zie [LICENSE.txt](LICENSE.txt) voor volledige details.
-In het kort mag je gerust een fork onderhouden met een vertaling van de tekst, mits je je aan de voorwaarden van de license houdt.
-Voor enkel het aanpassen van de README betekent dat simpelweg dat je (a) het werk attribueert (een fork geeft al de origin aan dus da's prima) en (b) je eigen modificaties onder dezelfde voorwaarden voor anderen beschikbaar stelt.
-_Sharing is caring!_ 🧡😊
-
-## Vertalingen
-
-De volgende vertalingen van deze opdracht zijn door anderen gemaakt en onderhouden:
-
-- English translation: https://github.com/FreekPaans/everybody-codes
-- English translation: https://github.com/iChoosr-BVBA/everybody-codes (based on the above fork by FreekPaans)
+See [LICENSE.txt](LICENSE.txt) for complete details. This fork was translated from the original by [Infi](https://github.com/infi-nl/everybody-codes).
